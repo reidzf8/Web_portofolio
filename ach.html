@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achievements — Muhammad Farid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+    body{background:#020617;color:#e5e7eb}
+    a{text-decoration:none;color:inherit}
+
+    /* ===== Header ===== */
+    header{
+      position:fixed;top:0;left:0;width:100%;z-index:1000;
+      padding:1.2rem 2.5rem;
+      display:flex;justify-content:space-between;align-items:center;
+      background:#020617;border-bottom:1px solid #1e293b;
+    }
+    .logo{font-weight:700;letter-spacing:1px}
+    nav{display:flex;align-items:center;gap:1.6rem}
+    nav a{opacity:.85;font-size:.9rem}
+    nav a.active,nav a:hover{opacity:1;color:#38bdf8}
+
+    /* Hamburger */
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .hamburger span{width:26px;height:3px;background:#e5e7eb;border-radius:2px}
+
+    @media(max-width:768px){
+      nav{
+        position:absolute;top:100%;right:0;
+        background:#020617;width:100%;
+        flex-direction:column;align-items:center;
+        padding:1.5rem 0;display:none;
+        border-bottom:1px solid #1e293b;
+      }
+      nav.show{display:flex}
+      .hamburger{display:flex}
+    }
+
+    /* ===== Main ===== */
+    main{padding:7rem 10% 4rem;max-width:1200px;margin:auto}
+
+    .page-title{
+      text-align:center;margin-bottom:4rem;
+      opacity:0;transform:translateY(20px);transition:1s ease;
+    }
+    .page-title h1{
+      font-size:2.6rem;
+      background:linear-gradient(90deg,#e5e7eb,#38bdf8);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      margin-bottom:.8rem
+    }
+    .page-title p{color:#94a3b8;max-width:600px;margin:auto}
+
+    /* ===== Achievement Timeline ===== */
+    .filters{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-bottom:3.5rem;opacity:0;transform:translateY(20px);transition:1s ease .2s}
+.filters button{padding:.6rem 1.4rem;border-radius:999px;border:1px solid #1e293b;background:transparent;color:#e5e7eb;cursor:pointer;transition:.3s ease}
+.filters button.active,.filters button:hover{border-color:#38bdf8;color:#38bdf8}
+
+.timeline{display:grid;gap:2.5rem}
+
+    .achievement{
+      display:grid;grid-template-columns:160px 80px 1fr;gap:2rem;
+      background:#020617;border:1px solid #1e293b;
+      border-radius:1.5rem;padding:1.8rem;
+      opacity:0;transform:translateY(20px);
+      transition:.5s ease;
+    }
+
+    .ach-media img{
+      width:100%;height:120px;object-fit:cover;border-radius:1rem;
+      border:1px solid #1e293b;
+    }
+    }
+
+    .achievement:hover{
+      border-color:#38bdf8;
+      box-shadow:0 0 50px rgba(56,189,248,.15)
+    }
+
+    .ach-year{
+      font-size:1.2rem;font-weight:700;color:#38bdf8
+    }
+
+    .ach-content h3{margin-bottom:.5rem}
+    .ach-content p{color:#94a3b8;line-height:1.6;font-size:.95rem}
+    .badge{
+      display:inline-block;margin-top:.8rem;
+      padding:.3rem .9rem;font-size:.75rem;
+      border-radius:999px;border:1px solid #1e293b;
+      color:#38bdf8
+    }
+
+    @media(max-width:768px){
+      .achievement{grid-template-columns:1fr}
+    }
+
+    footer{
+      margin-top:5rem;text-align:center;padding:2rem;
+      border-top:1px solid #1e293b;color:#94a3b8
+    }
+
+    .show{opacity:1!important;transform:translateY(0)!important}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Portfolio</div>
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="#" class="active">Achievement</a>
+  </nav>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<main>
+  <div class="page-title">
+    <h1>Achievements</h1>
+    <p>Pencapaian akademik, kompetisi, dan kontribusi yang menunjukkan konsistensi dan pertumbuhan kemampuan.</p>
+  </div>
+
+  <!-- Filter Buttons -->
+    <div class="filters">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="lomba">Lomba</button>
+    <button data-filter="course">Course</button>
+    <button data-filter="pemateri">Pemateri</button>
+  </div>
+  
+  <div class="timeline">
+
+    <!-- LOMBA -->
+    <div class="achievement" data-category="lomba">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1XQd2l3k5NIrn5TkSoiUBgN662S7B2AQf" alt="lom" /></div>
+      <div class="ach-year">2024</div>
+      <div class="ach-content">
+        <h3>JUARA FAVORITE WORK Infographic Competition University of RASIO 8.0 UNPAD 2024.</h3>
+        <span class="badge">Internasional</span>
+      </div>
+    </div>
+
+    
+    <div class="achievement" data-category="lomba">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1L_1EtqWjR534lrqSfC34iE-9CjEBAq87" alt="lom" /></div>
+      <div class="ach-year">2025</div>
+      <div class="ach-content">
+        <h3>TOP 6 Kreasi Dashboard Interaktif Dateraquest 1.0</h3>
+        <span class="badge">Nasional</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="lomba">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1Jq09w4ZtqWKxzEKSBVfvc6uRzaB1zQsT" alt="lom" /></div>
+      <div class="ach-year">2025</div>
+      <div class="ach-content">
+        <h3>JUARA 2 Lomba Infografis Training Kinds of Editing Skill (TAKIS) & Competition of Design (COD) 2025, Universitas Brawijaya.</h3>
+        <span class="badge">Nasional</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="lomba">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1wjDYEeaEc2lDOC4KTQa6EZ-hN1aWFrpM" alt="lom" /></div>
+      <div class="ach-year">2024</div>
+      <div class="ach-content">
+        <h3>FINALIS Lomba Dataquest 3.0 part of Airnology INFOGRAFIS UNAIR 2024.</h3>
+        <span class="badge">Nasional</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="lomba">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1I6BxSs7Tk_PLLoxzr_3zQepj5I3BX6Yu" alt="lom" /></div>
+      <div class="ach-year">2024</div>
+      <div class="ach-content">
+        <h3>FINALIS Lomba National Statistic Infographic Competition (NSIC) UNP 2024.</h3>
+        <span class="badge">Nasional</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="lomba">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1nYAWCjFkMazzLRAWJDURQiFHY_vM3ZBX" alt="lom" /></div>
+      <div class="ach-year">2024</div>
+      <div class="ach-content">
+        <h3>JUARA 3 Lomba Infografis Youth Ideas Competition FMIPA ULM 2024.</h3>
+        <span class="badge">Nasional</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="lomba">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1LyKnnlPl8llqVyNTf3H8ncbAKzm7gg85" alt="lom" /></div>
+      <div class="ach-year">2024</div>
+      <div class="ach-content">
+        <h3>JUARA FAVORIT Lomba Infografis Youth Ideas Competition FMIPA ULM 2024.</h3>
+        <span class="badge">Nasional</span>
+      </div>
+    </div>
+
+
+     <div class="achievement" data-category="lomba">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1Lxf8wa9OKTMwNXv2JWb2oEb05jUQxa7A" alt="lom" /></div>
+      <div class="ach-year">2025</div>
+      <div class="ach-content">
+        <h3>JUARA 2 Lomba Poster National Social Masterpiece (NSM) 2025, Universitas Negeri Semarang</h3>
+        <span class="badge">Nasional</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="lomba">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1OvPBMY0-ui04KYi0da38VA58ZYGhGJ1L" alt="lom" /></div>
+      <div class="ach-year">2025</div>
+      <div class="ach-content">
+        <h3>JUARA 2 Lomba Poster Economic Education Competition 2025, Universitas Negeri Semarang.</h3>
+        <span class="badge">Nasional</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="lomba">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1MFLSFSsiPifwJRJE35dGJR3duL94WlCt" alt="lom" /></div>
+      <div class="ach-year">2025</div>
+      <div class="ach-content">
+        <h3>JUARA 1 Lomba Poster Ilmiah MEDISPRO X IES 2025, Fakultas Kedokteran, Universitas Negeri Semarang.</h3>
+        <span class="badge">Nasional</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="lomba">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1QEiWPXdQhgtywZXRcqCo9VzuYahCne0d" alt="lom" /></div>
+      <div class="ach-year">2025</div>
+      <div class="ach-content">
+        <h3>JUARA 2 Lomba Poster IDELEGIA 2025, DPM FISIP Universitas Negeri Semarang</h3>
+        <span class="badge">Nasional</span>
+      </div>
+    </div>
+
+    <!-- COURSE -->
+    <div class="achievement" data-category="course">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1Wam8cusd1R6iIItHM1DmYMbJqRZotOAM" alt="SQL" /></div>
+      <div class="ach-year">2024</div>
+      <div class="ach-content">
+        <h3>Course Data Science</h3>
+        <p>ASEAN Data Science Explorers 2024 Enablement Session – SAP Analytics Cloud and SAP Build Apps Online Training Session</p>
+        <span class="badge">Data Science</span>
+        <span class="badge">Data Analyst</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="course">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1EVizXTBF-hdh_FWU6MHir0weuDNPbXnn" alt="Data Analyst" /></div>
+      <div class="ach-year">2024</div>
+      <div class="ach-content">
+        <h3>Course Data Analyst (RevoU)</h3>
+        <p>Mempelajari analisis data, data wrangling, dan visualisasi.</p>
+        <span class="badge">Data Analyst</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="course">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/19-l82qTWMIraasKpW7KKxmDeti8L2Px4" alt="c" /></div>
+      <div class="ach-year">2024</div>
+      <div class="ach-content">
+        <h3>Course SQL (Dicoding)</h3>
+        <p>Pemahaman dasar hingga lanjutan query SQL.</p>
+        <span class="badge">Database</span>
+      </div>
+    </div>
+
+
+    <div class="achievement" data-category="course">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1VejVVzjMH3RAgAP1vLgzUlXU7j3Vroon" alt="SQL" /></div>
+      <div class="ach-year">2024</div>
+      <div class="ach-content">
+        <h3>Course Data Science Journey (Rakamin)</h3>
+        <p>Pelatihan Data Science dari awal hingga lanjutan.</p>
+        <span class="badge">Data Science</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="course">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1N6ufTuM5eG9AFR9Np3R57468hSvuolh8" alt="SQL" /></div>
+      <div class="ach-year">2024</div>
+      <div class="ach-content">
+        <h3>Shortcourse Statistika dan Sains Data</h3>
+        <p>Metode Sains Data, Visualisasi Data, Jaringan Saraf Tiruan, dan Data Mining</p>
+        <span class="badge">Data Science</span>
+        <span class="badge">Data Analyst</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="course">
+      <div class="ach-media"><img src="https://lh3.googleusercontent.com/d/1GJZIyRCj7NUfvFlUC4DIa1IB_XYCLmY2" alt="SQL" /></div>
+      <div class="ach-year">2024</div>
+      <div class="ach-content">
+        <h3>Course Adobe Illustrator</h3>
+        <p>Mempelajari dasar-dasar desain vektor menggunakan Adobe Illustrator.</p>
+        <span class="badge">Design</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="course">
+      <div class="ach-media"><img src="course-html.jpg" alt="HTML" /></div>
+      <div class="ach-year">2023</div>
+      <div class="ach-content">
+        <h3>Course HTML</h3>
+        <p>Membangun struktur web dasar dengan HTML semantik.</p>
+        <span class="badge">Web</span>
+      </div>
+    </div>
+
+    <!-- PEMATERI -->
+    <div class="achievement" data-category="pemateri">
+      <div class="ach-media"><img src="asses/ex/1.jpeg" alt="Pemateri Figma" /></div>
+      <div class="ach-year">2025</div>
+      <div class="ach-content">
+        <h3>Pemateri Pelatihan Design Figma</h3>
+        <p>Menjadi pemateri pelatihan dasar desain menggunakan Figma.</p>
+        <span class="badge">Pemateri</span>
+      </div>
+    </div>
+
+    <div class="achievement" data-category="pemateri">
+      <div class="ach-media"><img src="asses/ex/2.JPG" alt="Pemateri Canva" /></div>
+      <div class="ach-year">2025</div>
+      <div class="ach-content">
+        <h3>Pemateri Pelatihan Design Canva</h3>
+        <p>Mengisi pelatihan desain praktis menggunakan Canva.</p>
+        <span class="badge">Pemateri</span>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>© 2026 Muhammad Farid</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  hamburger.addEventListener('click',()=>{
+    navMenu.classList.toggle('show');
+  });
+
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting) entry.target.classList.add('show');
+    });
+  },{threshold:0.15});
+
+  document.querySelectorAll('.page-title,.filters,.achievement')
+    .forEach(el=>observer.observe(el));
+
+  // ===== Filter Logic =====
+  const filterButtons = document.querySelectorAll('.filters button');
+  const achievements = document.querySelectorAll('.achievement');
+
+  filterButtons.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      filterButtons.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      achievements.forEach(card=>{
+        if(filter === 'all' || card.dataset.category === filter){
+          card.style.display = 'grid';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
